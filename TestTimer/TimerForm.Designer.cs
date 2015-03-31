@@ -37,7 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBoxRight = new System.Windows.Forms.PictureBox();
             this.pictureBoxLeft = new System.Windows.Forms.PictureBox();
-            this.nextTestTimeTextBox = new System.Windows.Forms.TextBox();
+            this.nextTestTimeTextBox = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
             this.SuspendLayout();
@@ -116,9 +116,11 @@
             // 
             this.nextTestTimeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nextTestTimeTextBox.Location = new System.Drawing.Point(167, 43);
+            this.nextTestTimeTextBox.Mask = "00:00";
             this.nextTestTimeTextBox.Name = "nextTestTimeTextBox";
-            this.nextTestTimeTextBox.Size = new System.Drawing.Size(54, 29);
-            this.nextTestTimeTextBox.TabIndex = 8;
+            this.nextTestTimeTextBox.Size = new System.Drawing.Size(51, 29);
+            this.nextTestTimeTextBox.TabIndex = 9;
+            this.nextTestTimeTextBox.ValidatingType = typeof(System.DateTime);
             this.nextTestTimeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nextTestTimeTextBox_KeyPress);
             this.nextTestTimeTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.nextTestTimeTextBox_Validating);
             // 
@@ -156,7 +158,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBoxRight;
         private System.Windows.Forms.PictureBox pictureBoxLeft;
-        private System.Windows.Forms.TextBox nextTestTimeTextBox;
+        private System.Windows.Forms.MaskedTextBox nextTestTimeTextBox;
     }
 }
 

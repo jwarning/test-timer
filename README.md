@@ -1,6 +1,6 @@
 # Test Timer
 
-:warning: (Currently still a work in progress)
+:warning: Currently a work in progress.
 
 A simple test timer application written in Windows Forms.
 
@@ -21,4 +21,4 @@ test time can be brought forward to a custom time as well.
 
 ## License
 
-[MIT](./LICENSE).
+[MIT](./LICENSE)

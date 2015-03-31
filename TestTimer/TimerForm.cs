@@ -46,7 +46,11 @@ namespace TestTimer
             currentTimeLabel.Text = DateTime.Now.ToString("HH:mm");
 
             // auto increment next test time
-            if (DateTime.Now >= nextTestTime) nextTestTime = nextTestTime.Add(nextTestInterval);
+            if (DateTime.Now >= nextTestTime)
+            {
+                nextTestTime = nextTestTime.Add(nextTestInterval);
+                nextTestTimeTextBox.Text = nextTestTime.ToString("HH:mm");
+            }
 
             this.Refresh();
         }
@@ -57,7 +61,7 @@ namespace TestTimer
 
             // update labels
             currentTimeLabel.Text = "Off";
-            nextTestTimeTextBox.Text = "Off";
+            nextTestTimeTextBox.Text = "";
             nextTestTimeTextBox.ReadOnly = true;
 
             this.Refresh();
@@ -132,7 +136,10 @@ namespace TestTimer
             DateTime value;
             if (DateTime.TryParse(nextTestTimeTextBox.Text, out value))
             {
-                // make sure the date is no more than an hour in the future
+                // adjust for times that are meant to be for the next day
+                if (value.Subtract(DateTime.Now).TotalMinutes < 0) value = value.Add(new TimeSpan(1, 0, 0, 0));
+
+                // make sure the time is no more than an hour in the future
                 if (value.Subtract(DateTime.Now).TotalMinutes <= 60 && value.Subtract(DateTime.Now).TotalMinutes > 0)
                 {
                     // clean up date time input
