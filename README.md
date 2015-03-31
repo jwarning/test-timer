@@ -1,5 +1,7 @@
 # Test Timer
 
+:warning: (Currently still a work in progress)
+
 A simple test timer application written in Windows Forms.
 
 It was originally created according to a specification, however it is available
